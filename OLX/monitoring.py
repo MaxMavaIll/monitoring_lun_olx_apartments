@@ -106,6 +106,7 @@ def check_flat_with_filter(token, chain_id, data):
 Кімнати: {rooms}
 Площа: {areas}/-/{areas_kit}
 Поверх: {floor}
+Час публікації: {get_time_post[-1]} 
 <a href="{full_link}">Перейти на сайт</a>
         """
                         
