@@ -1,5 +1,6 @@
 import requests
 import logging 
+import time
 
 from bs4 import BeautifulSoup
 from tb_bot.api_bot import send_message
@@ -77,6 +78,7 @@ def check_flat_with_filter(token, chain_id, data):
                 if article_id not in data["LUN"]:
                     send_message(message, token, chain_id)
                     data["LUN"].append(article_id)
+                    time.sleep(1)
 
         else:
             log.error("LUN | Помилка при доступі до сторінки:", response.status_code)
