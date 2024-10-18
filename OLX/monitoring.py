@@ -67,13 +67,17 @@ def check_flat_with_filter(token, chain_id, data):
                             
                             text = info.find('p').get_text(strip=True) if info.find('p') else "Опису немає"
 
-                            floor = text[len(floor_filter):] if floor_filter in text else "Опису немає"
+                            if floor_filter in text:
+                                floor = text[len(floor_filter):] 
 
-                            areas = text[len(areas_filter):] if areas_filter in text else "-"
+                            if areas_filter in text:
+                                areas = text[len(areas_filter):] 
 
-                            areas_kit = text[len(areas_kitchen_filter):] if areas_kitchen_filter in text else "-"
+                            if areas_kitchen_filter in text:
+                                areas_kit = text[len(areas_kitchen_filter):] 
 
-                            rooms = text[len(room_filter):] if room_filter in text else "Опису немає"
+                            if room_filter in text:
+                                rooms = text[len(room_filter):] 
                             
                         description = soup.find('div', class_="css-1o924a9").get_text(strip=True) if soup.find('div', class_="css-1o924a9") else "Опису немає"
 
